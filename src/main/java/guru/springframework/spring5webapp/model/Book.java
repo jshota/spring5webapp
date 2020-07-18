@@ -11,7 +11,7 @@ public class Book {
 
     @Id // 2. telling JPA this is the id, and we need to tell hibernate how it is getting generated
     @GeneratedValue(strategy = GenerationType.AUTO) // 3. telling the underlying database to provide generation of this
-    private Long Id;
+    private Long id;
 
     private String title;
     private String isbn;
@@ -19,7 +19,7 @@ public class Book {
     @ManyToMany // 4. setting the many to many relationship
     // we have an author table, a book table and a author_book join table here
     @JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"),
-        inverseJoinColumns = @JoinColumn(name = "author_id"))
+            inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set<Author> authors;
 
     public Book() {
@@ -32,11 +32,11 @@ public class Book {
     }
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getTitle() {
