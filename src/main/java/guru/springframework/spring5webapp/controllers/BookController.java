@@ -31,6 +31,9 @@ public class BookController {
          */
         model.addAttribute("books", bookRepository.findAll());
 
-        return "books";
+        /*
+        It's going to tell the viewers over to look for a template under the directory books called list
+         */
+        return "books/list";
     }
 }
